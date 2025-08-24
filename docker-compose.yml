@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  # Tier 1: The Data Tier (PostgreSQL Database)
+  db:
+    image: postgres:13
+    container_name: golden-bank-db
+    restart: always
+    environment:
+      POSTGRES_USER: devops
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: golden_bank_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - golden_bank_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U devops -d golden_bank_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Tier 2: The Business Logic Tier (Python/Flask Backend)
+  backend:
+    build: ./backend
+    container_name: golden-bank-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: db
+      DB_NAME: golden_bank_db
+      DB_USER: devops
+      DB_PASS: password
+    volumes:
+      - ./backend:/app
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Tier 3: The Presentation Tier (Nginx Frontend)
+  frontend:
+    build: ./frontend
+    container_name: golden-bank-frontend
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    depends_on:
+      - backend
+
+volumes:
+  golden_bank_data:
+

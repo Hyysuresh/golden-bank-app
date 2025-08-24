@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Bank - Premium Banking Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Hero Section -->
+    <section class="gradient-gold py-20 min-h-screen flex items-center justify-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white lg:order-1">
+                    <h1 class="text-5xl font-bold mb-6 leading-tight">Your Golden Future Starts Here</h1>
+                    <p class="text-xl mb-8 text-gold-50">Experience premium banking with personalized service, innovative solutions, and the security you deserve.</p>
+                </div>
+                <div class="flex justify-center lg:order-2">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 w-full max-w-md shadow-xl">
+                        <h3 class="text-gray-800 text-3xl font-bold mb-6 text-center">Login</h3>
+                        <form id="loginForm" class="space-y-4">
+                            <div>
+                                <label for="username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                                <input type="text" id="username" name="username" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                                <input type="password" id="password" name="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent">
+                            </div>
+                            <button type="submit" class="w-full gradient-gold text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">Login</button>
+                            <p id="message" class="text-sm text-center mt-4"></p>
+                        </form>
+                        <p class="text-sm text-center text-gray-600 mt-6">Don't have an account? <a href="register.html" class="text-gold-600 hover:text-gold-700 font-semibold transition-colors">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Premium Banking Services</h2>
+                <p class="text-xl text-gray-600">Tailored solutions for your financial success</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">🏦</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Personal Banking</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive personal banking solutions including checking, savings, and premium credit cards.</p>
+                    <button class="text-gold-600 font-semibold hover:text-gold-700 transition-colors">Learn More →</button>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">💼</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Business Solutions</h3>
+                    <p class="text-gray-600 mb-6">Grow your business with our commercial banking, lending, and cash management services.</p>
+                    <button class="text-gold-600 font-semibold hover:text-gold-700 transition-colors">Learn More →</button>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 gradient-gold rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">📈</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Wealth Management</h3>
+                    <p class="text-gray-600 mb-6">Expert investment advice and portfolio management to secure your financial future.</p>
+                    <button class="text-gold-600 font-semibold hover:text-gold-700 transition-colors">Learn More →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Why Choose Golden Bank?</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 gradient-gold rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">24/7 Premium Support</h4>
+                                <p class="text-gray-600">Dedicated relationship managers available around the clock for all your banking needs.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 gradient-gold rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Advanced Security</h4>
+                                <p class="text-gray-600">Bank-grade encryption and multi-factor authentication to protect your assets.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 gradient-gold rounded-full flex items-center justify-center mr-4 mt-1">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Competitive Rates</h4>
+                                <p class="text-gray-600">Industry-leading interest rates on savings and competitive loan terms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Start Your Golden Journey</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent" placeholder="Enter your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent" placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent" placeholder="Enter your phone number">
+                        </div>
+                        <button type="submit" class="w-full gradient-gold text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">Get Started Today</button>
+                    </form>
+                    <p class="text-xs text-gray-500 mt-4 text-center">This is a demo form. No actual account will be created.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 gradient-gold rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">G</span>
+                        </div>
+                        <span class="text-2xl font-bold">Golden Bank</span>
+                    </div>
+                    <p class="text-gray-400">Your trusted partner in financial excellence since 1985.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Personal Banking</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Business Banking</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Investments</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Loans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Security</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gold-600 transition-colors">📘</a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gold-600 transition-colors">🐦</a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gold-600 transition-colors">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Golden Bank. All rights reserved. FDIC Insured.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
