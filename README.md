@@ -15,3 +15,6 @@ docker compose up -d --build
 # Nginx
 install Nginx reverse proxy to make this application available
 sudo apt get update   sudo apt install nginx
+
+
+# ----------------------------------- thankyou -----------------------------------
