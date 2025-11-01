@@ -1,0 +1,34 @@
+kind: Deployment 
+apiVersion: apps/v1 
+metadata: 
+  name: goldenbank-deployment 
+  namespace: goldenbank 
+spec:
+  replicas: 2 
+  selector:
+      matchLabels:
+          app: goldenbank 
+  template:
+    metadata:
+      labels:
+        app: goldenbank 
+    spec:
+      containers:
+          - name: goldenbank-frontend
+            image: hyysuresh/golden-bank-app_frontend:latest
+            ports:
+              - containerPort: 5000
+---
+kind: Service 
+apiVersion: v1 
+metadata:
+  name: goldenbank-service 
+  namespace: goldenbank 
+spec:
+  selector:
+    app: goldenbank 
+  ports:
+    - protocol: TCP
+      port: 5000 
+      targetPort: 5000
+  
